@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,400;1,500&
+    family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-con">
+          <h1>Library</h1>
+          <nav>
+            <div class="logged-out" id="loggedOut">
+              <button class="btn" id="logInBtn">Log in</button>
+            </div>
+            <div class="logged-in" id="loggedIn">
+              <button class="btn" id="accountBtn">Account</button>
+              <button class="btn" id="logOutBtn">Log out</button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="main-con">
+        <button class="btn btn-add" id="addBookBtn">+ Add book</button>
+        <div class="books-grid" id="booksGrid"></div>
+      </main>
+  
+      
+      <div class="modal" id="addBookModal">
+        <form class="add-book-form" id="addBookForm">
+          <h3>Add new book</h3>
+          <input class="input" type="text" id="title" placeholder="Title" maxlength="100" required/>
+          <p class="error" id="error"></p>
+          <input class="input" type="text" id="author" placeholder="Author" maxlength="100" required/>
+          <input class="input" type="number" id="pages" placeholder="Pages" max="10000" required/>
+          <div class="read?">
+            <label for="read?">Have you read it?</label>
+            <input class="checkbox" type="checkbox" id="read?" />
+          </div>
+          <button class="btn submit-btn" type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="modal" id="accountModal"></div>
+      <div class="overlay" id="overlay"></div>
+</body>
+</html>

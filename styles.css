@@ -1,0 +1,99 @@
+:root {
+    --white: #fffbfb;
+    --light-red: #ff9c9c;
+    --purple: rgb(rgb(44, 7, 38)); 
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+body{
+    background:linear-gradient(80deg, rgb(238, 127, 214), 30%, var(--purple) 90%);
+    /* font-family: 'Barlow', sans-serif; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+button,input {
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+nav, button{
+    color: #050505;
+}
+
+
+
+
+/* BUTTONS */
+.btn {
+    padding: 10px, 15px;
+    border-radius: 8px;
+    transition: filter 0.15s ease-in-out;
+  }
+
+.btn:hover {
+  filter: brightness(90%);
+}
+
+.addBtn{
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+.submit-Btn{
+    background-color: antiquewhite;
+}
+
+.account-Btn{
+    background-color: var(--purple);
+}
+
+
+
+/* HEADER */
+
+header{
+    background-color: #1a08088c;
+    color: antiquewhite;
+    box-shadow: #ff7070 0px 1px 6px;
+}
+
+.header-con{
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.header-con {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+
+
+
+
+
+/* MAIN */
+
+.main-con{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
