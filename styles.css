@@ -58,11 +58,6 @@ nav, button{
     background-color: antiquewhite;
 }
 
-.account-Btn{
-    background-color: var(--purple);
-}
-
-
 
 /* HEADER */
 
@@ -76,24 +71,21 @@ header{
   max-width: 1200px;
   padding: 20px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header-con {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+
   
-
-
-
 
 
 /* MAIN */
 
 .main-con{
     margin-top: 20px;
-    text-align: center;
+    text-align: right;
 }
+
 
 
