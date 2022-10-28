@@ -21,7 +21,7 @@
         <div class="header-con">
           <h1>Library</h1>
           <nav>
-            <div class="logged-out" id="loggedOut">
+            <div class="logged-out active" id="loggedOut">
               <button class="btn" id="logInBtn">Log in</button>
             </div>
             <div class="logged-in" id="loggedIn">
@@ -32,7 +32,7 @@
       </header>
 
       <main class="main-con">
-        <button class="btn btn-add" id="addBookBtn">+ Add new book</button>
+        <button class="btn btn-add" id="addBookBtn"><strong>+</strong>Add book</button>
         <div class="books-grid" id="booksGrid"></div>
       </main>
   
@@ -44,12 +44,15 @@
           <p class="error" id="error"></p>
           <input class="input" type="text" id="author" placeholder="Author" maxlength="100" required/>
           <input class="input" type="number" id="pages" placeholder="Pages" max="10000" required/>
-          <div class="read?">
-            <label for="read?">Have you read it?</label>
-            <input class="checkbox" type="checkbox" id="read?" />
+          <div class="is-read">
+            <label for="is-read">Have you read it?</label>
+            <input class="checkbox" type="checkbox" id="is-read" />
           </div>
           <button class="btn submit-btn" type="submit">Submit</button>
         </form>
       </div>
+
+      <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
     </body>
 </html>
