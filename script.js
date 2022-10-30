@@ -1,5 +1,5 @@
 class Book {
-  constructor(title = 'Unknown', author = 'Unknown', pages = '0', isRead = false) {
+  constructor(title = '', author = '', pages = '0', isRead = false) {
     this.title = title
     this.author = author
     this.pages = pages
@@ -40,6 +40,7 @@ const addBookBtn = document.getElementById('addBookBtn')
 const addBookModal = document.getElementById('addBookModal')
 const overlay = document.getElementById('overlay')
 const addBookForm = document.getElementById('addBookForm')
+const booksGrid = document.getElementById('booksGrid')
 
 const reset = () => {
   addBookForm.innerHTML = ""
@@ -56,6 +57,7 @@ const closeAddBookModal = () => {
   overlay.classList.remove('active')
 }
 
+
 addBookBtn.onclick = openAddBookModal
 overlay.onclick = closeAddBookModal 
 
@@ -63,6 +65,7 @@ overlay.onclick = closeAddBookModal
 
 const updateBooksGrid = () => {
   resetBooksGrid()
+  restoreLocal()
   library.books.forEach(book => {
     createBookCard(book)
   });
@@ -85,8 +88,7 @@ const createBookCard = (book) => {
   buttonGroup.classList.add('button-group')
   readBtn.classList.add('btn')
   removeBtn.classList.add('btn')
-  //readBtn.onclick = toggleRead
-  //removeBtn.onclick = removeBook
+ 
 
   title.textContent = `"${book.title}"`
   author.textContent = book.author
@@ -119,22 +121,30 @@ const getBookFromInput = () => {
 }
 
 const addBook = (e) => {
-  e.preventDefault()
   const newBook = getBookFromInput()
-  console.log(title.value)
+
+  if (library.isInLibrary(newBook)) {
+    errorMsg.textContent = 'This book already exists in your library'
+    errorMsg.classList.add('active')
+    e.preventDefault()
+  }
   library.addBook(newBook)
   saveLocal()
   updateBooksGrid()
-  closeAddBookModal()
 }
 
-addBookForm.onsubmit = addBook
+
+
 
 
 
 //Local Storage
 const saveLocal = () => {
   window.localStorage.setItem('library', JSON.stringify(library.books))
+}
+
+const JSONToBook = (book) => {
+  return new Book(book.title, book.author, book.pages, book.isRead)
 }
 
 const restoreLocal = () => {
@@ -146,6 +156,9 @@ const restoreLocal = () => {
   }
 }
 
+
+addBookForm.onsubmit = addBook
+window.onload = updateBooksGrid
 
 
 

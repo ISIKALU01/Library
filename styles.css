@@ -169,6 +169,16 @@ header{
   background-color: antiquewhite;
 }
 
+.error-msg {
+  display: none;
+  color: darkred;
+}
+
+.error-msg.active {
+  display: block;
+  margin-top: -15px;
+}
+
 input[type='text'],
 input[type='number']{
   cursor: text;
