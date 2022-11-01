@@ -88,7 +88,11 @@ const createBookCard = (book) => {
   buttonGroup.classList.add('button-group')
   readBtn.classList.add('btn')
   removeBtn.classList.add('btn')
- 
+  removeBtn.classList.add('removeBtn')
+
+  //card btns
+  readBtn.onclick = toggleRead
+  removeBtn.onclick = removeBook
 
   title.textContent = `"${book.title}"`
   author.textContent = book.author
@@ -97,10 +101,10 @@ const createBookCard = (book) => {
 
   if (book.isRead) {
     readBtn.textContent = 'Read'
-    readBtn.classList.add('btn-light-green')
+    readBtn.classList.add('btn-dark-green')
   } else {
     readBtn.textContent = 'Not read'
-    readBtn.classList.add('btn-light-red')
+    readBtn.classList.add('btn-dark-red')
   }
 
   bookCard.appendChild(title)
@@ -116,13 +120,12 @@ const getBookFromInput = () => {
   const title = document.getElementById('title').value
   const author = document.getElementById('author').value
   const pages = document.getElementById('pages').value
-  const isRead = document.getElementById('isRead')
+  const isRead = document.getElementById('isRead').checked
   return new Book(title, author, pages, isRead)
 }
 
 const addBook = (e) => {
   const newBook = getBookFromInput()
-
   if (library.isInLibrary(newBook)) {
     errorMsg.textContent = 'This book already exists in your library'
     errorMsg.classList.add('active')
@@ -133,8 +136,20 @@ const addBook = (e) => {
   updateBooksGrid()
 }
 
+const removeBook = (e) => {
+  const title = e.target.parentNode.parentNode.firstChild.innerHTML.replaceAll('"','')
+  library.removeBook(title)
+  saveLocal()
+  updateBooksGrid() 
+}
 
-
+const toggleRead = (e) => {
+  const title = e.target.parentNode.parentNode.firstChild.innerHTML.replaceAll('"','')
+  const book = library.getBook(title)
+  book.isRead = !book.isRead
+  saveLocal()
+  updateBooksGrid()
+}
 
 
 
@@ -159,6 +174,3 @@ const restoreLocal = () => {
 
 addBookForm.onsubmit = addBook
 window.onload = updateBooksGrid
-
-
-

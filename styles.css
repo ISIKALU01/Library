@@ -13,7 +13,7 @@
 
 
 body{
-    background:linear-gradient(80deg, rgb(238, 127, 214), 30%, var(--purple) 90%);
+    background:linear-gradient(80deg, rgb(127, 194, 238), 30%, navy 90%);
     /* font-family: 'Barlow', sans-serif; */
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
@@ -116,7 +116,7 @@ header{
 }
 
 .btn-add:hover{
-  background-color: rgb(100, 74, 74);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -129,7 +129,7 @@ header{
   width: 300px;
   padding: 20px;
   border-radius: 8px;
-  background-color: rgb(100, 74, 74);
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   transform: translate(-50%, -50%) scale(0);
   transition: 0.5s ease-in-out;
@@ -158,7 +158,7 @@ header{
 }
 
 .add-book-form button:hover{
-  background-color:rgb(61, 59, 59);
+  background-color:rgb(42, 107, 42);
   color: antiquewhite;
 }
 
@@ -187,6 +187,7 @@ input[type='number']{
 .is-read {
   display: flex;
   gap: 10px;
+  color: antiquewhite;
 }
 
 .checkbox {
@@ -238,3 +239,15 @@ input[type='number']{
   gap: 20px;
 }
 
+.btn-dark-green {
+  background-color: rgb(56, 141, 56);
+}
+
+.btn-dark-red {
+  background-color: rgb(70, 14, 14);
+  color: antiquewhite;
+}
+
+.removeBtn:hover{
+  background-color: rgb(172, 6, 6);
+}
