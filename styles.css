@@ -11,6 +11,11 @@
   margin: 0;
 }
 
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
 
 body{
     background:linear-gradient(80deg, rgb(127, 194, 238), 30%, navy 90%);
@@ -71,21 +76,16 @@ header{
   justify-content: space-between;
 }
 
-.logged-in,
-.logged-out {
-  display: none;
+.fa-github {
+  font-size: 40px;
+  color: antiquewhite;
+  transition: transform 0.3s ease-in-out;
 }
 
-.logged-in.active,
-.logged-out.active {
-  display: flex;
-  gap: 20px;
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
 }
 
-.logged-in,
-.logged-out button{
-  background-color: antiquewhite;
-}
 
 
 /* MAIN */
@@ -250,4 +250,19 @@ input[type='number']{
 
 .removeBtn:hover{
   background-color: rgb(172, 6, 6);
+}
+
+/* footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: antiquewhite;
 }

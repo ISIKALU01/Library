@@ -174,3 +174,4 @@ const restoreLocal = () => {
 
 addBookForm.onsubmit = addBook
 window.onload = updateBooksGrid
+

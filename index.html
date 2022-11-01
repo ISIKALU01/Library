@@ -21,22 +21,18 @@
         <div class="header-con">
           <h1>Library</h1>
           <nav>
-            <div class="logged-out active" id="loggedOut">
-              <button class="btn" id="logInBtn">Log in</button>
-            </div>
-            <div class="logged-in" id="loggedIn">
-              <button class="btn" id="logOutBtn">Log out</button>
-            </div>
+            <a href="https://github.com/ISIKALU01" target="_blank">
+              <i class="fab fa-github"></i></a>
           </nav>
         </div>
       </header>
+     
 
       <main class="main-con container">
         <button class="btn btn-add" id="addBookBtn"><strong>+</strong></button>
         <div class="books-grid" id="booksGrid"></div>
       </main>
-  
-      
+    
       <div class="modal" id="addBookModal">
         <form class="add-book-form" id="addBookForm">
           <h3>Add new book</h3>
@@ -53,6 +49,17 @@
       </div>
 
       <div class="overlay" id="overlay"></div>
+      
+
+      <footer class="footer">
+        <p>
+          Copyright ©
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
+          Isikalu David
+        </p>
+      </footer>
     <script src="script.js"></script>
     </body>
 </html>
