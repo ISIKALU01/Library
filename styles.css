@@ -20,7 +20,7 @@ html {
 body{
     background:linear-gradient(80deg, rgb(127, 194, 238), 30%, navy 90%);
     /* font-family: 'Barlow', sans-serif; */
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 20px;
 }
 
@@ -286,9 +286,7 @@ input[type='number']{
     margin-top: 70px;
     margin-bottom: 70px;
   }
-
 }
-
 
 @media (max-width: 320px) {
   .book-card{
