@@ -8,27 +8,24 @@ function Book(title = '', author = '', pages = '0', isRead = false){
 function Library(){
     this.books = []
 
-    Library.prototype.addBook = (newBook) => {
+    this.removeBook = (title) => {
+      this.books = this.books.filter((book) => book.title !== title)
+    }
+
+    this.isInLibrary = (newBook) => {
+      return this.books.some((book) => book.title === newBook.title)
+    }
+    
+    this.addBook = (newBook) => {
       if (!this.isInLibrary(newBook)) {
         this.books.push(newBook)
       }
     }
-    
-    Library.prototype.removeBook = (title) => {
-      this.books = this.books.filter((book) => book.title !== title)
-    }
-    
-    Library.prototype.getBook = (title) => {
+
+    this.getBook = (title) => {
       return this.books.find((book) => book.title === title)
     }
-    
-    Library.prototype.isInLibrary = (newBook) => {
-      return this.books.some((book) => book.title === newBook.title)
-    }
 }
-
-
-
 
 const library = new Library()
 
@@ -146,6 +143,7 @@ const toggleRead = (e) => {
   const title = e.target.parentNode.parentNode.firstChild.innerHTML.replaceAll('"','')
   const book = library.getBook(title)
   book.isRead = !book.isRead
+  console.log(book)
   saveLocal()
   updateBooksGrid()
 }
