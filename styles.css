@@ -99,6 +99,7 @@ header{
   position: relative;
   margin-top: 10px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .btn-add{
@@ -265,6 +266,7 @@ input[type='number']{
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   color: antiquewhite;
+  
 }
 
 /* MEDIA QUERIES */
